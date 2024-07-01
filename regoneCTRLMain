@@ -1,0 +1,470 @@
+
+getgenv().adverting = false
+getgenv().isDropping = false
+
+Players.PlayerAdded:Connect(function(player)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "person joined",
+        Text = player.name .. " in game",
+        Duration = 5
+    })
+end)
+
+local function PlayerAdded(Player)
+    local function Chatted(Message)
+        local plr = game.Players.LocalPlayer
+        local character = plr.Character or plr.CharacterAdded:Wait()
+        local humanoid = character:FindFirstChild("Humanoid")
+        local PlayerHumanoid = plr.Character:WaitForChild("Humanoid")
+        local targetHumanoid = Player.Character:WaitForChild("Humanoid")
+        local LastTargetPosition = targetHumanoid.RootPart.CFrame
+        local Length = 3
+
+        if Player.UserId == getgenv().controller then
+
+            local finalMsg = Message:lower()
+
+            for i, v in pairs(getgenv().alts) do
+                if v == plr.UserId then
+                    if finalMsg == getgenv().prefix .. "fly " .. plr.Name:lower() then
+                        startFly()
+
+                    end
+                    if finalMsg == getgenv().prefix .. "fly" then
+                        startFly()
+
+                    end
+                    if finalMsg == getgenv().prefix .. "setup admin" then
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+                        for i, v in pairs(getgenv().alts) do
+                            if i == "Alt1" then
+                                if v == plr.UserId then
+                                        game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                            CFrame.new(-883, -38, -623)
+                                end
+                            end
+                            if i == "Alt2" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-878, -38, -623)
+                                end
+                            end
+                            if i == "Alt3" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-873, -38, -623)
+                                end
+                            end
+                            if i == "Alt4" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-868, -38, -624)
+                                end
+                            end
+                            if i == "Alt5" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-862, -38, -624)
+                                end
+                            end
+                            if i == "Alt6" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-857, -38, -624)
+                                end
+                            end
+                            if i == "Alt7" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-857, -38, -618)
+                                end
+                            end
+                            if i == "Alt8" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-862, -38, -618)
+                                end
+                            end
+                            if i == "Alt9" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-867, -38, -618)
+                                end
+                            end
+                            if i == "Alt10" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-872, -38, -618)
+                                end
+                            end
+                        end
+                    end
+
+                    if finalMsg == getgenv().prefix .. "setup bank" then
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+                        for i, v in pairs(getgenv().alts) do
+                            if i == "Alt1" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-389, 21, -338)
+                                end
+                            end
+                            if i == "Alt2" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-385, 21, -338)
+                                end
+                            end
+                            if i == "Alt3" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-380, 21, -337)
+                                end
+                            end
+                            if i == "Alt4" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-376, 21, -338)
+                                end
+                            end
+                            if i == "Alt5" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-370, 21, -338)
+                                end
+                            end
+                            if i == "Alt6" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-366, 21, -338)
+                                end
+                            end
+                            if i == "Alt7" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-361, 21, -338)
+                                end
+                            end
+                            if i == "Alt8" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-361, 21, -333)
+                                end
+                            end
+                            if i == "Alt9" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-365, 21, -334)
+                                end
+                            end
+                            if i == "Alt10" then
+                                if v == plr.UserId then
+                                    game:service 'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                                        CFrame.new(-370, 21, -334)
+                                end
+                            end
+                        end
+                    end
+                    if finalMsg == getgenv().prefix .. "drop" then
+
+                        if getgenv().isDropping == false then
+
+                            getgenv().isDropping = true
+
+                            if getgenv().isDropping == true then
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true, 102, false, yomama)
+                                local args = {
+                                    [1] = "im droppin",
+                                    [2] = "All"
+                                }
+
+                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                                    unpack(args))
+                            end
+                            while getgenv().isDropping == true do
+
+                                if game:GetService("Players").LocalPlayer.DataFolder.Currency.Value < 10000 then
+                                    local args = {
+                                        [1] = "im poor bru",
+                                        [2] = "All"
+                                    }
+
+                                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents
+                                        .SayMessageRequest:FireServer(unpack(args))
+                                end
+
+                                local args = {
+                                    [1] = "DropMoney",
+                                    [2] = "10000"
+                                }
+
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+                                wait(15)
+                            end
+                        else
+
+                            getgenv().isDropping = false
+                            if getgenv().isDropping == false then
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false, 102, false, yomama)
+                                local args = {
+                                    [1] = "i quit droppin",
+                                    [2] = "All"
+                                }
+
+                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                                    unpack(args))
+                            end
+
+                        end
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "drop " .. plr.Name:lower() then
+
+                        if getgenv().isDropping == false then
+
+                            getgenv().isDropping = true
+
+                            if getgenv().isDropping == true then
+                                game:GetService("VirtualInputManager"):SendKeyEvent(true, 102, false, yomama)
+                                local args = {
+                                    [1] = "im droppin",
+                                    [2] = "All"
+                                }
+
+                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                                    unpack(args))
+                            end
+                            while getgenv().isDropping == true do
+
+                                if game:GetService("Players").LocalPlayer.DataFolder.Currency.Value < 10000 then
+                                    local args = {
+                                        [1] = "i poor bru",
+                                        [2] = "All"
+                                    }
+
+                                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents
+                                        .SayMessageRequest:FireServer(unpack(args))
+                                end
+
+                                local args = {
+                                    [1] = "DropMoney",
+                                    [2] = "10000"
+                                }
+
+                                game:GetService("ReplicatedStorage").MainEvent:FireServer(unpack(args))
+                                wait(15)
+                            end
+                        else
+
+                            getgenv().isDropping = false
+                            if getgenv().isDropping == false then
+                                game:GetService("VirtualInputManager"):SendKeyEvent(false, 102, false, yomama)
+                                local args = {
+                                    [1] = "i quit droppin",
+                                    [2] = "All"
+                                }
+
+                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                                    unpack(args))
+                            end
+
+                        end
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "advert" then
+                            
+
+                        if getgenv().adverting == false then
+
+                            getgenv().adverting = true
+
+                            while getgenv().adverting == true do
+
+                                local args = {
+                                    [1] = getgenv().adMessage,
+                                    [2] = "All"
+                                }
+
+                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                                    unpack(args))
+                                wait(getgenv().adMessageCooldown)
+
+                            end
+                        else
+
+                            getgenv().adverting = false
+
+                        end
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "advert " .. plr.Name:lower() then
+
+                        if getgenv().adverting == false then
+
+                            getgenv().adverting = true
+
+                            while getgenv().adverting == true do
+
+                                local args = {
+                                    [1] = getgenv().adMessage,
+                                    [2] = "All"
+                                }
+
+                                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                                    unpack(args))
+                                wait(getgenv().adMessageCooldown)
+
+                            end
+                        else
+
+                            getgenv().adverting = false
+
+                        end
+
+                    end
+                    if finalMsg == getgenv().prefix .. "wallet " .. plr.Name:lower() then
+                        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                            if v.name == "Wallet" then
+                                v.Parent = game.Players.LocalPlayer.Character
+                            else
+                                local localPlayer = game.Players.LocalPlayer
+                                local humanoid = localPlayer.Character:FindFirstChildOfClass("Humanoid")
+                                if humanoid then
+                                    humanoid:UnequipTools()
+                                end
+                            end
+                        end
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "wallet" then
+                        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                            if v.name == "Wallet" then
+                                v.Parent = game.Players.LocalPlayer.Character
+                            else
+                                local localPlayer = game.Players.LocalPlayer
+                                local humanoid = localPlayer.Character:FindFirstChildOfClass("Humanoid")
+                                if humanoid then
+                                    humanoid:UnequipTools()
+                                end
+                            end
+                        end
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "money? " .. plr.Name:lower() then
+
+                        local args = {
+                            [1] = "uhh i got " ..
+                                game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text,
+                            [2] = "All"
+                        }
+
+                        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                            unpack(args))
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "money?" then
+
+                        local args = {
+                            [1] = "uhh i got " ..
+                                game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text,
+                            [2] = "All"
+                        }
+
+                        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                            unpack(args))
+
+                    end
+                    if finalMsg == getgenv().prefix .. "airlock " .. plr.Name:lower() then
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+                        local player = game.Players.LocalPlayer
+                        local character = player.Character
+                        local humanoid = character:FindFirstChild("Humanoid")
+                        local LPlr = game.Players.LocalPlayer
+                        local Character = LPlr.Character
+                        local HRP = Character:WaitForChild("HumanoidRootPart")
+                        humanoid.Jump = true
+                        wait(0.3)
+                        game.Players.LocalPlayer.Character.Head.Anchored = true
+
+                    end
+                    if finalMsg == getgenv().prefix .. "airlock" then
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+                        local player = game.Players.LocalPlayer
+                        local character = player.Character
+                        local humanoid = character:FindFirstChild("Humanoid")
+                        local LPlr = game.Players.LocalPlayer
+                        local Character = LPlr.Character
+                        local HRP = Character:WaitForChild("HumanoidRootPart")
+                        humanoid.Jump = true
+                        wait(0.3)
+                        game.Players.LocalPlayer.Character.Head.Anchored = true
+
+                    end
+                    if finalMsg == getgenv().prefix .. "kill" then
+                        humanoid.Health = 0
+                    end
+
+                    if finalMsg == getgenv().prefix .. "kill " .. plr.Name:lower() then
+                        humanoid.Health = 0
+                    end
+
+                    if finalMsg == getgenv().prefix .. "kick" then
+                        plr:Kick("peace out bruhh")
+                    end
+                    if finalMsg == getgenv().prefix .. "kick " .. plr.Name:lower() then
+                        plr:Kick("peace out bruhh")
+                    end
+
+                    if finalMsg == getgenv().prefix .. "bringalts" then
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+                        PlayerHumanoid.RootPart.CFrame = LastTargetPosition + LastTargetPosition.LookVector * Length
+                        PlayerHumanoid.RootPart.CFrame =
+                            CFrame.new(PlayerHumanoid.RootPart.CFrame.Position, Vector3.new(
+                                LastTargetPosition.Position.X, PlayerHumanoid.RootPart.CFrame.Position.Y,
+                                LastTargetPosition.Position.Z))
+                    end
+
+                    if finalMsg == getgenv().prefix .. "bring " .. plr.Name:lower() then
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+                        PlayerHumanoid.RootPart.CFrame = LastTargetPosition + LastTargetPosition.LookVector * Length
+                        PlayerHumanoid.RootPart.CFrame =
+                            CFrame.new(PlayerHumanoid.RootPart.CFrame.Position, Vector3.new(
+                                LastTargetPosition.Position.X, PlayerHumanoid.RootPart.CFrame.Position.Y,
+                                LastTargetPosition.Position.Z))
+                    end
+
+                    if finalMsg == getgenv().prefix .. "freeze" then
+
+                        game.Players.LocalPlayer.Character.Head.Anchored = true
+
+                    end
+
+                    if finalMsg == getgenv().prefix .. "freeze " .. plr.Name:lower() then
+
+                        game.Players.LocalPlayer.Character.Head.Anchored = true
+
+                    end
+                    if finalMsg == getgenv().prefix .. "unfreeze" then
+
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+
+                    end
+                    if finalMsg == getgenv().prefix .. "unfreeze " .. plr.Name:lower() then
+
+                        game.Players.LocalPlayer.Character.Head.Anchored = false
+
+                    end
+                end
+            end
+
+        end
+    end
+    Player.Chatted:Connect(Chatted)
+end
+print("done woadin")
