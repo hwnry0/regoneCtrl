@@ -1,4 +1,4 @@
-getgenv().adMessageCooldown = 2
+getgenv().adMessageCooldown = 2 -- cooldown
 getgenv().prefix = '.' -- The prefix for the commands example: :fly username
 getgenv().altFPS = 15 -- set the FPS for alts
 getgenv().adMessage = "pls get cash from regn"
